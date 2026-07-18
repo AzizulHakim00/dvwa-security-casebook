@@ -1,36 +1,26 @@
 # DVWA Security Casebook
 
-A complete, original, responsive web showcase for a controlled DVWA penetration-testing project.
+A complete, original presentation layer for a controlled DVWA penetration-testing project presented and organized by **Azizul Hakim Omor**.
 
-## Highlights
+## Included
 
-- 10 structured vulnerability findings
-- 20 original SVG evidence visuals
-- Terminal-style lab captures and report-style finding cards
-- Search and severity filters
-- Detailed accessible finding dialogs
-- Evidence lightbox
-- Print-ready full assessment report
-- Responsive navigation and reduced-motion support
-- No copied identity, screenshots, reports, or wording from another portfolio
+- 10 vulnerability modules
+- 25 payload and command records
+- 38 supplied lab-evidence screenshots
+- Low, medium, and high security-level observations where present in the source material
+- Burp Suite Intruder workflow and response-length analysis
+- Command injection, CSRF, file inclusion, file upload, SQL injection, DOM XSS, reflected XSS, stored XSS, and cookie-stealing demonstrations
+- Screenshot carousels, fullscreen evidence viewer, search, severity filters, copy buttons, responsive layout, and print-to-PDF support
+- Defensive recommendations for every module
 
-## Run locally
+## Excluded intentionally
 
-Open `index.html` directly, or serve the folder:
-
-```bash
-python -m http.server 8080
-```
-
-Then visit `http://localhost:8080`.
+The supplied archive included another person’s profile photo, contact information, and six personal course/assignment PDFs. Those files are not published or represented as Azizul Hakim Omor’s work.
 
 ## Ethical use
 
-All demonstrations are presented for an isolated, deliberately vulnerable DVWA lab. Do not test systems without explicit authorization.
+All content documents an isolated, deliberately vulnerable DVWA laboratory. Do not test any system without explicit authorization.
 
-## Author
+## Live site
 
-Azizul Hakim Omor  
-CSE Undergraduate, Southeast University  
-Dhaka, Bangladesh  
-GitHub: https://github.com/AzizulHakim00
+`https://azizulhakim00.github.io/dvwa-security-casebook/`

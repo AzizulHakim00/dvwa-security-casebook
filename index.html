@@ -1,46 +1,157 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Evidence-led DVWA penetration-testing casebook by Azizul Hakim Omor.">
-<title>DVWA Security Casebook | Azizul Hakim Omor</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07131f">
+  <meta name="description" content="A complete evidence-led DVWA penetration-testing casebook by Azizul Hakim Omor, documenting ten controlled-lab vulnerability modules with 38 evidence screenshots.">
+  <meta property="og:title" content="DVWA Security Casebook | Azizul Hakim Omor">
+  <meta property="og:description" content="Ten controlled-lab modules, 25 payload records, 38 evidence screenshots, security-level bypass analysis, and defensive guidance.">
+  <meta property="og:type" content="website">
+  <title>DVWA Security Casebook | Azizul Hakim Omor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2307131f'/%3E%3Cpath d='M23 69 44 25h13l20 44H62l-4-10H41l-4 10H23Zm22-22h10l-5-13-5 13Z' fill='%235be5c2'/%3E%3C/svg%3E">
 </head>
 <body>
-<div class="progress"><span id="progress"></span></div>
-<header>
-  <a class="brand" href="#top"><b>A/O</b><span>Security Casebook<small>DVWA · CONTROLLED LAB</small></span></a>
-  <button id="menu" aria-label="Open navigation">☰</button>
-  <nav id="nav"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#findings">Findings</a><a href="#report">Report</a><a href="#about">About</a></nav>
-</header>
-<main id="top">
-<section class="hero shell">
-  <div class="hero-copy">
-    <p class="eyebrow"><i></i>AUTHORIZED WEB APPLICATION SECURITY LAB</p>
-    <h1>Evidence first.<em>Risk made clear.</em></h1>
-    <p class="lead">A complete DVWA penetration-testing showcase with ten structured case files, terminal-style evidence, report visuals, impact analysis, and developer-focused remediation.</p>
-    <div class="actions"><a class="button primary" href="#findings">Explore findings ↓</a><a class="button" href="#report">Assessment report ↗</a></div>
-    <div class="hero-stats"><span><b>10</b>Findings</span><span><b>20</b>Visual records</span><span><b>05</b>Domains</span></div>
-  </div>
-  <aside class="terminal">
-    <div class="terminal-bar"><span><i></i><i></i><i></i></span><b>casebook@dvwa-lab</b><small>LIVE</small></div>
-    <div class="terminal-body"><p><b>$</b> assessment --target dvwa.local --authorized</p><p><i>[+]</i> scope: auth · injection · files · session · xss</p><p><i>[+]</i> evidence indexed: <strong>20 artifacts</strong></p><p><i>[+]</i> findings verified: <strong>10 cases</strong></p><p class="success">[✓] report ready for review</p><div class="risk-mini"><span>CRITICAL<b>02</b></span><span>HIGH<b>05</b></span><span>MEDIUM<b>03</b></span></div></div>
-  </aside>
-</section>
-<div class="ticker"><div>AUTHENTICATION ◆ INJECTION ◆ FILE HANDLING ◆ SESSION SECURITY ◆ CROSS-SITE SCRIPTING ◆ REMEDIATION ◆</div></div>
-<section class="section shell" id="overview">
-  <div class="section-no">01 <span>ASSESSMENT OVERVIEW</span></div>
-  <div class="split"><div><p class="eyebrow">THE CASEBOOK</p><h2>Not a screenshot dump.<br>A reviewable security narrative.</h2></div><p class="lead">Each case follows the same clear structure: vulnerable surface, controlled procedure, observable evidence, realistic impact, root cause, and prioritized defensive action.</p></div>
-  <div class="dashboard"><article><span>RISK DISTRIBUTION</span><div class="donut"><b>10</b><small>findings</small></div><ul><li><i class="critical"></i>Critical <b>2</b></li><li><i class="high"></i>High <b>5</b></li><li><i class="medium"></i>Medium <b>3</b></li></ul></article><article><span>EVIDENCE COVERAGE</span><b class="big">20</b><p>Original terminal and report visuals generated for this casebook.</p></article><article><span>ETHICAL BOUNDARY</span><b class="big">100%</b><p>Isolated, deliberately vulnerable DVWA training environment only.</p></article></div>
-</section>
-<section class="section section-dark" id="method"><div class="shell"><div class="section-no">02 <span>WORKING METHOD</span></div><div class="split"><div><p class="eyebrow">REPEATABLE PROCESS</p><h2>From hypothesis to defensible finding.</h2></div><p class="lead">The method is designed so a reviewer can understand the result without recreating every lab action.</p></div><div class="steps"><article><b>01</b><h3>Scope</h3><p>Define target, authorization, security level, boundary, and expected secure behavior.</p></article><article><b>02</b><h3>Probe</h3><p>Use focused browser, proxy, and command-line inputs against one control at a time.</p></article><article><b>03</b><h3>Capture</h3><p>Preserve request context and observable output as terminal and report evidence.</p></article><article><b>04</b><h3>Remediate</h3><p>Connect root cause to practical developer, platform, and monitoring controls.</p></article></div></div></section>
-<section class="section shell" id="findings"><div class="section-no">03 <span>FINDING LEDGER</span></div><div class="split"><div><p class="eyebrow">TEN CASE FILES</p><h2>Open a case.<br>Follow the evidence.</h2></div><p class="lead">Filter by risk, search by name or ID, then open any finding for procedure, impact, root cause, and remediation.</p></div><div class="controls"><label>⌕ <input id="search" type="search" placeholder="Search findings or ID"></label><div id="filters"><button class="active" data-filter="all">All</button><button data-filter="Critical">Critical</button><button data-filter="High">High</button><button data-filter="Medium">Medium</button></div><span id="count">10 cases</span></div><div class="finding-grid" id="grid"></div></section>
-<section class="section section-dark" id="report"><div class="shell report"><div class="paper"><div class="paper-head"><span>DVWA / 2026</span><b>SECURITY ASSESSMENT</b></div><h3>Evidence-led penetration-testing casebook</h3><p>Prepared by Azizul Hakim Omor</p><div class="paper-stats"><span><b>10</b>findings</span><span><b>20</b>visuals</span><span><b>05</b>domains</span></div><i></i><i></i><i></i></div><div><p class="eyebrow">PRINT-READY REPORT</p><h2>Built for reviewers, not only viewers.</h2><p class="lead">Print this complete casebook or save it as PDF. The output includes scope, risk distribution, findings, evidence summaries, and remediation priorities.</p><button class="button primary" onclick="window.print()">Print / Save PDF</button></div></div></section>
-<section class="section shell" id="about"><div class="section-no">04 <span>PREPARED BY</span></div><div class="about"><div class="avatar">AO</div><div><p class="eyebrow">AZIZUL HAKIM OMOR</p><h2>CSE student building across cybersecurity, intelligent systems, and software.</h2><p class="lead">Undergraduate at Southeast University in Dhaka, Bangladesh. This casebook demonstrates practical security testing, evidence organization, and developer-focused remediation communication.</p><div class="social"><a href="mailto:mdomor01815@gmail.com">Email ↗</a><a href="https://github.com/AzizulHakim00" target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/in/azizul-hakim-omor-5991b3410/" target="_blank">LinkedIn ↗</a><a href="https://my-portfolio-nine-opal-kxj5ttgspi.vercel.app/" target="_blank">Portfolio ↗</a></div></div></div></section>
-</main>
-<footer class="shell"><span>DVWA Security Casebook · Authorized educational lab only</span><span>© 2026 Azizul Hakim Omor</span><a href="#top">Back to top ↑</a></footer>
-<dialog id="modal"><button class="modal-close" id="close">×</button><div id="modalContent"></div></dialog>
-<script src="app.js"></script>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page-progress" aria-hidden="true"><span id="pageProgress"></span></div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#top" aria-label="DVWA Security Casebook home">
+      <span class="brand-mark">A/O</span>
+      <span class="brand-copy"><strong>Security Casebook</strong><small>DVWA · AUTHORIZED LAB</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+      <a href="#overview">Overview</a>
+      <a href="#method">Method</a>
+      <a href="#modules">Modules</a>
+      <a href="#report">Report</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="https://github.com/AzizulHakim00/dvwa-security-casebook" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><i></i> Authorized web application security assessment</p>
+        <h1>Evidence first.<br><em>Every case explained.</em></h1>
+        <p class="hero-lede">A complete DVWA penetration-testing casebook documenting ten vulnerability modules, 25 payload and command records, 38 supplied lab-evidence screenshots, security-level bypasses, observed results, and developer-focused remediation.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#modules">Explore all modules <span>↓</span></a>
+          <button class="button quiet" id="printTop" type="button">Print / Save PDF</button>
+        </div>
+        <div class="hero-metrics" aria-label="Project totals">
+          <span><strong>10</strong><small>tested modules</small></span>
+          <span><strong>25</strong><small>payload records</small></span>
+          <span><strong>38</strong><small>evidence screenshots</small></span>
+          <span><strong>03</strong><small>security levels</small></span>
+        </div>
+      </div>
+
+      <aside class="hero-terminal reveal" aria-label="Assessment terminal summary">
+        <div class="terminal-head"><div><i></i><i></i><i></i></div><span>casebook@dvwa-lab</span><b>COMPLETE</b></div>
+        <div class="terminal-body">
+          <p><span>$</span> assessment --target dvwa.local --authorized</p>
+          <p><b>[+]</b> modules loaded: authentication, injection, files, session, xss</p>
+          <p><b>[+]</b> security levels reviewed: low / medium / high</p>
+          <p><b>[+]</b> evidence indexed: <strong>38 screenshots</strong></p>
+          <p><mark>[✓]</mark> casebook status: READY FOR REVIEW</p>
+          <div class="terminal-stats"><span>CRITICAL<strong>02</strong></span><span>HIGH<strong>05</strong></span><span>MEDIUM<strong>03</strong></span></div>
+          <p class="cursor-line"><span>casebook@lab:~$</span><i></i></p>
+        </div>
+      </aside>
+    </section>
+
+    <div class="scope-strip" aria-label="Assessment coverage"><div>AUTHENTICATION <i>◆</i> COMMAND INJECTION <i>◆</i> CSRF <i>◆</i> FILE INCLUSION <i>◆</i> FILE UPLOAD <i>◆</i> SQL INJECTION <i>◆</i> DOM XSS <i>◆</i> REFLECTED XSS <i>◆</i> STORED XSS <i>◆</i> COOKIE STEALING</div></div>
+
+    <section class="section overview" id="overview">
+      <div class="section-number reveal"><span>01</span><p>Assessment overview</p></div>
+      <div class="overview-grid">
+        <div class="section-copy reveal">
+          <p class="kicker">THE COMPLETE RECORD</p>
+          <h2>All original technical content, organized so it is easy to review.</h2>
+          <p>This version preserves every module, payload, command, step, caption, and screenshot from the supplied DVWA showcase. It removes the previous owner’s identity and unrelated personal PDFs, then presents the technical work under Azizul Hakim Omor’s project profile.</p>
+          <div class="boundary"><span>ETHICAL BOUNDARY</span><p>All demonstrations belong to an isolated, deliberately vulnerable DVWA training environment. Do not test systems without explicit authorization.</p></div>
+        </div>
+        <div class="overview-board reveal">
+          <article class="risk-card">
+            <div class="card-label"><span>RISK DISTRIBUTION</span><b>10 TOTAL</b></div>
+            <div class="risk-layout">
+              <div class="donut"><div><strong>10</strong><small>findings</small></div></div>
+              <ul><li><i class="critical"></i><span>Critical</span><b>2</b></li><li><i class="high"></i><span>High</span><b>5</b></li><li><i class="medium"></i><span>Medium</span><b>3</b></li></ul>
+            </div>
+          </article>
+          <article><span>EVIDENCE</span><strong>38</strong><small>full-resolution lab screenshots</small></article>
+          <article><span>PAYLOADS</span><strong>25</strong><small>commands, URLs, and test inputs</small></article>
+          <article><span>TOOLS</span><strong>05</strong><small>DVWA, Burp, browser, Linux CLI, Hashcat</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method" id="method">
+      <div class="section-number reveal"><span>02</span><p>Working method</p></div>
+      <div class="section-heading reveal"><div><p class="kicker">REPEATABLE PROCESS</p><h2>From request capture to verified evidence.</h2></div><p>Every module follows the same workflow so the testing steps and observed result remain understandable without relying on unexplained screenshots.</p></div>
+      <div class="method-grid">
+        <article class="reveal"><span>01</span><div>⌖</div><h3>Scope</h3><p>Confirm the local DVWA target, authorization boundary, module, and security level.</p></article>
+        <article class="reveal"><span>02</span><div>⌁</div><h3>Execute</h3><p>Apply the documented input, URL, Burp Intruder setup, command, or browser payload.</p></article>
+        <article class="reveal"><span>03</span><div>◫</div><h3>Capture</h3><p>Record source code, request details, response differences, command output, and browser behavior.</p></article>
+        <article class="reveal"><span>04</span><div>✓</div><h3>Explain</h3><p>Connect the observed result to the vulnerable point, impact, and practical secure controls.</p></article>
+      </div>
+      <div class="toolchain reveal"><div><p class="kicker">LAB TOOLCHAIN</p><h3>Purposeful tools with visible evidence.</h3></div><ul><li>DVWA</li><li>Burp Suite Intruder</li><li>Browser DevTools</li><li>Linux command line</li><li>Hashcat</li></ul></div>
+    </section>
+
+    <section class="section modules" id="modules">
+      <div class="section-number reveal"><span>03</span><p>Vulnerability modules</p></div>
+      <div class="section-heading reveal"><div><p class="kicker">TEN COMPLETE CASE FILES</p><h2>Search, filter, open, and inspect every screenshot.</h2></div><p>The module ledger includes the exact overview, vulnerable point, performed steps, payloads, commands, evidence captions, and all 38 images referenced by the uploaded project.</p></div>
+
+      <div class="module-controls reveal">
+        <label class="search-box"><span>⌕</span><input id="moduleSearch" type="search" placeholder="Search module, category, payload, or keyword" aria-label="Search modules"></label>
+        <div class="filter-buttons" id="filterButtons" role="toolbar" aria-label="Filter modules by severity">
+          <button class="active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="Critical" aria-pressed="false">Critical</button>
+          <button type="button" data-filter="High" aria-pressed="false">High</button>
+          <button type="button" data-filter="Medium" aria-pressed="false">Medium</button>
+        </div>
+        <span id="resultCount">10 modules</span>
+      </div>
+
+      <div class="quick-nav reveal" id="quickNav" aria-label="Jump to module"></div>
+      <div class="module-list" id="moduleList"></div>
+    </section>
+
+    <section class="section report-section" id="report">
+      <div class="section-number reveal"><span>04</span><p>Assessment report</p></div>
+      <div class="report-card reveal">
+        <div class="report-preview" aria-hidden="true"><div class="paper"><div class="paper-head"><span>DVWA / 2026</span><b>SECURITY ASSESSMENT</b></div><h3>Evidence-led penetration-testing casebook</h3><p>Prepared by Azizul Hakim Omor</p><div class="paper-metrics"><span><b>10</b>modules</span><span><b>25</b>payloads</span><span><b>38</b>screenshots</span></div><i></i><i></i><i></i><i></i></div></div>
+        <div class="report-copy"><p class="kicker">PRINT-READY OUTPUT</p><h2>Save the entire casebook as a structured PDF.</h2><p>The print view keeps the overview, methodology, all ten module details, payloads, remediation guidance, and screenshot captions while removing interactive controls.</p><button class="button primary" id="printReport" type="button">Print / Save PDF</button><div class="report-checks"><span>✓ Complete module coverage</span><span>✓ All screenshot captions</span><span>✓ Defensive recommendations</span></div></div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="section-number reveal"><span>05</span><p>Prepared by</p></div>
+      <div class="about-card reveal">
+        <div class="author-mark"><span>AZIZUL</span><strong>AO</strong><span>OMOR</span></div>
+        <div><p class="kicker">AZIZUL HAKIM OMOR</p><h2>CSE undergraduate exploring cybersecurity, intelligent systems, and practical software development.</h2><p>This casebook organizes controlled web-security testing evidence, evidence organization, technical communication, and developer-focused remediation. The source project’s previous personal identity and unrelated assignment PDFs are intentionally excluded.</p><div class="author-tags"><span>Web Application Security</span><span>Penetration Testing</span><span>Software Development</span></div><div class="author-links"><a href="mailto:mdomor01815@gmail.com">Email ↗</a><a href="https://github.com/AzizulHakim00" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/azizul-hakim-omor-5991b3410/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://my-portfolio-nine-opal-kxj5ttgspi.vercel.app/" target="_blank" rel="noreferrer">Main portfolio ↗</a></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><p>DVWA Security Casebook · Authorized educational lab only</p><p>© 2026 Azizul Hakim Omor</p><a href="#top">Back to top ↑</a></footer>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightboxTitle">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image viewer">×</button>
+    <button class="lightbox-arrow prev" id="lightboxPrev" type="button" aria-label="Previous screenshot">←</button>
+    <figure><img id="lightboxImage" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt=""><figcaption><span id="lightboxCounter"></span><strong id="lightboxTitle"></strong><p id="lightboxCaption"></p></figcaption></figure>
+    <button class="lightbox-arrow next" id="lightboxNext" type="button" aria-label="Next screenshot">→</button>
+  </dialog>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

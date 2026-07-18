@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0c0c">
+  <meta name="description" content="An evidence-led DVWA web application security casebook prepared by Azizul Hakim Omor.">
+  <meta property="og:title" content="DVWA Security Casebook | Azizul Hakim Omor">
+  <meta property="og:description" content="Ten controlled-lab findings across authentication, injection, file handling, CSRF and XSS.">
+  <meta property="og:type" content="website">
+  <title>DVWA Security Casebook | Azizul Hakim Omor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23ff6b35'/%3E%3Cpath d='M23 68 43 25h14l20 43H62l-4-10H41l-4 10H23Zm22-21h10l-5-13-5 13Z' fill='%230b0c0c'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-meter" aria-hidden="true"><span id="scrollMeter"></span></div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#top" aria-label="Security Casebook home">
+      <span class="brand-mark">A/O</span>
+      <span class="brand-copy"><strong>Security Casebook</strong><small>DVWA // 2026</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav">
+      <span></span><span></span><span></span><span class="sr-only">Open menu</span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+      <a href="#overview">Overview</a>
+      <a href="#method">Method</a>
+      <a href="#findings">Findings</a>
+      <a href="#profile">Profile</a>
+      <a class="nav-portfolio" href="https://my-portfolio-nine-opal-kxj5ttgspi.vercel.app/" target="_blank" rel="noreferrer">Main portfolio <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Controlled lab assessment / DVWA</p>
+        <h1>Breaking the weak points.<br><em>Documenting the fix.</em></h1>
+        <p class="hero-lede">An evidence-led web application security casebook covering ten vulnerability classes inside an isolated, deliberately vulnerable environment.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#findings">Explore findings <span>↓</span></a>
+          <a class="button button-quiet" href="#method">Read methodology</a>
+        </div>
+      </div>
+
+      <aside class="hero-dossier reveal" aria-label="Assessment summary">
+        <div class="dossier-top">
+          <span>ASSESSMENT DOSSIER</span>
+          <span class="status"><i></i> COMPLETE</span>
+        </div>
+        <div class="dossier-person">
+          <img src="https://avatars.githubusercontent.com/u/157488702?v=4" alt="Azizul Hakim Omor">
+          <div>
+            <p>Prepared by</p>
+            <h2>Azizul Hakim Omor</h2>
+            <span>CSE Undergraduate · Southeast University</span>
+          </div>
+        </div>
+        <dl class="dossier-meta">
+          <div><dt>Target</dt><dd>DVWA</dd></div>
+          <div><dt>Environment</dt><dd>Isolated local lab</dd></div>
+          <div><dt>Focus</dt><dd>Web application security</dd></div>
+          <div><dt>Evidence</dt><dd>36 captured artifacts</dd></div>
+        </dl>
+        <div class="terminal-line"><span>casebook@lab:~$</span> assessment --status <b>verified</b><i>_</i></div>
+      </aside>
+    </section>
+
+    <aside class="scope-strip" aria-label="Assessment scope">
+      <div>
+        <span>AUTHENTICATION</span><i>✦</i><span>INJECTION</span><i>✦</i><span>FILE HANDLING</span><i>✦</i><span>SESSION SECURITY</span><i>✦</i><span>CROSS-SITE SCRIPTING</span><i>✦</i><span>REMEDIATION</span>
+      </div>
+    </aside>
+
+    <section class="overview section" id="overview">
+      <div class="section-label reveal"><span>01</span><p>Assessment overview</p></div>
+      <div class="overview-layout">
+        <div class="section-intro reveal">
+          <p class="kicker">THE BRIEF</p>
+          <h2>Security findings should be understandable—not buried in a report.</h2>
+          <p>This casebook turns controlled DVWA tests into a clear record of what was tested, what the evidence shows, why each weakness matters, and how a development team can address it.</p>
+        </div>
+        <div class="metric-grid reveal">
+          <article><strong data-count="10">0</strong><span>Finding groups</span><small>Across core web attack surfaces</small></article>
+          <article><strong data-count="36">0</strong><span>Evidence captures</span><small>Reviewed and organized by case</small></article>
+          <article><strong data-count="4">0</strong><span>Risk bands</span><small>Critical through medium</small></article>
+          <article><strong data-count="3">0</strong><span>Security levels</span><small>Low, medium and high controls</small></article>
+        </div>
+      </div>
+
+      <section class="risk-board reveal" aria-label="Risk distribution">
+        <div class="risk-board-head">
+          <div><p class="kicker">RISK SNAPSHOT</p><h3>Priorities at a glance</h3></div>
+          <p>Lab severity reflects demonstrated impact and exploitability in this controlled environment; it is not a formal CVSS assessment.</p>
+        </div>
+        <div class="risk-bars">
+          <div class="risk-row"><span>Critical</span><div><i style="--size: 20%"></i></div><b>2</b></div>
+          <div class="risk-row"><span>High</span><div><i style="--size: 50%"></i></div><b>5</b></div>
+          <div class="risk-row"><span>Medium</span><div><i style="--size: 30%"></i></div><b>3</b></div>
+          <div class="risk-row"><span>Low</span><div><i style="--size: 0%"></i></div><b>0</b></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="method section" id="method">
+      <div class="section-label reveal"><span>02</span><p>Working method</p></div>
+      <div class="method-heading reveal">
+        <div><p class="kicker">REPEATABLE PROCESS</p><h2>From test input to defensible finding.</h2></div>
+        <p>Every case follows the same evidence discipline so the result can be reviewed without recreating the entire lab.</p>
+      </div>
+      <div class="method-track">
+        <article class="reveal"><span>01</span><div class="method-icon">⌖</div><h3>Scope</h3><p>Define the local target, security level, test boundary and expected behavior.</p></article>
+        <article class="reveal"><span>02</span><div class="method-icon">⌁</div><h3>Probe</h3><p>Use focused inputs and familiar assessment tools to exercise one control at a time.</p></article>
+        <article class="reveal"><span>03</span><div class="method-icon">◫</div><h3>Capture</h3><p>Preserve the request, observable output and comparison point as visual evidence.</p></article>
+        <article class="reveal"><span>04</span><div class="method-icon">✓</div><h3>Recommend</h3><p>Connect the root cause to practical defensive controls for developers and operators.</p></article>
+      </div>
+      <div class="lab-boundary reveal">
+        <div class="boundary-icon"><span>LOCAL</span><strong>DVWA</strong></div>
+        <div><p class="kicker">ETHICAL BOUNDARY</p><h3>Deliberately vulnerable. Deliberately isolated.</h3><p>All demonstrations belong to a controlled training environment. The techniques documented here are for authorized learning and defensive improvement only.</p></div>
+      </div>
+    </section>
+
+    <section class="findings section" id="findings">
+      <div class="section-label reveal"><span>03</span><p>Finding ledger</p></div>
+      <div class="findings-heading reveal">
+        <div><p class="kicker">TEN CASE FILES</p><h2>Follow the evidence.</h2></div>
+        <p>Filter the ledger by risk, then open any case to review its test path, captured evidence and recommended controls.</p>
+      </div>
+      <div class="filter-bar reveal" role="toolbar" aria-label="Filter findings">
+        <div class="filter-buttons" id="filterButtons">
+          <button class="active" type="button" data-filter="all" aria-pressed="true">All findings</button>
+          <button type="button" data-filter="critical" aria-pressed="false">Critical</button>
+          <button type="button" data-filter="high" aria-pressed="false">High</button>
+          <button type="button" data-filter="medium" aria-pressed="false">Medium</button>
+        </div>
+        <span id="resultCount">10 cases shown</span>
+      </div>
+      <div class="finding-list" id="findingList"></div>
+    </section>
+
+    <section class="closing section" id="profile">
+      <div class="closing-card reveal">
+        <div class="closing-copy">
+          <p class="kicker">BEYOND THE LAB</p>
+          <h2>Security thinking belongs in every build.</h2>
+          <p>I’m Azizul Hakim Omor, a CSE undergraduate exploring cybersecurity, intelligent systems and practical software development. This casebook is one part of a broader project portfolio.</p>
+          <div class="closing-links">
+            <a class="button button-primary" href="https://my-portfolio-nine-opal-kxj5ttgspi.vercel.app/" target="_blank" rel="noreferrer">Visit main portfolio <span>↗</span></a>
+            <a class="text-link" href="https://github.com/AzizulHakim00" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a class="text-link" href="https://www.linkedin.com/in/azizul-hakim-omor-5991b3410/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+        <div class="closing-monogram" aria-hidden="true"><span>AZIZUL</span><strong>AO</strong><span>OMOR</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>DVWA Security Casebook · Educational controlled-lab project</p>
+    <p>© <span id="year"></span> Azizul Hakim Omor</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightboxCaption">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image viewer">×</button>
+    <button class="lightbox-arrow prev" id="lightboxPrev" type="button" aria-label="Previous image">←</button>
+    <figure>
+      <img id="lightboxImage" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="">
+      <figcaption><span id="lightboxIndex"></span><strong id="lightboxCaption"></strong></figcaption>
+    </figure>
+    <button class="lightbox-arrow next" id="lightboxNext" type="button" aria-label="Next image">→</button>
+  </dialog>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

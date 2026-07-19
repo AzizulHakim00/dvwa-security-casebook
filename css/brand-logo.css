@@ -1,0 +1,11 @@
+/* Shared Azizul Hakim Omor compact serif identity */
+.site-header .brand{display:block;width:270px;height:58px;padding:0;border:1px solid rgba(7,19,31,.12);border-radius:11px;background:#f8faf9;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.22);transition:transform .2s,box-shadow .2s}
+.site-header .brand:hover{transform:translateY(-2px);box-shadow:0 13px 34px rgba(0,0,0,.28)}
+.site-header .brand-mark,.site-header .brand-copy{display:none}
+.brand-logo-full{display:block;width:100%;height:100%;object-fit:contain}
+.brand-logo-mark{display:none;width:100%;height:100%;object-fit:contain}
+.author-brand{display:grid;place-items:center;min-height:250px;padding:24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#112a40,#0a1928)}
+.author-brand img{width:min(330px,100%);max-height:210px;object-fit:contain;border-radius:14px;background:#f8faf9;box-shadow:0 18px 45px rgba(0,0,0,.25)}
+@media(max-width:1050px){.site-header .brand{width:225px;height:54px}}
+@media(max-width:760px){.site-header .brand{width:54px;height:54px}.brand-logo-full{display:none}.brand-logo-mark{display:block}.author-brand{min-height:210px}}
+@media print{.site-header .brand{box-shadow:none}.author-brand{background:#fff;border-color:#ccd7dd}.author-brand img{box-shadow:none}}

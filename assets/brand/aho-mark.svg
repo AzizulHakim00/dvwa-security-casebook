@@ -1,12 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
   <title id="title">AHO monogram</title>
   <desc id="desc">Compact serif monogram for Azizul Hakim Omor.</desc>
-  <rect width="240" height="240" rx="26" fill="#f8faf9"/>
   <path d="M48 65a87 87 0 0 0-20 56c0 35 20 66 51 80" fill="none" stroke="#20c8c4" stroke-width="7" stroke-linecap="round"/>
   <path d="M87 28a87 87 0 0 1 94 74" fill="none" stroke="#20c8c4" stroke-width="7" stroke-linecap="round"/>
   <path d="M30 151a87 87 0 0 0 74 61" fill="none" stroke="#20c8c4" stroke-width="7" stroke-linecap="round"/>
-  <text x="65" y="98" fill="#061523" font-family="Georgia,'Times New Roman',serif" font-size="98" font-weight="500">A</text>
-  <text x="58" y="187" fill="#061523" font-family="Georgia,'Times New Roman',serif" font-size="126" font-weight="500">H</text>
-  <text x="142" y="201" fill="#061523" font-family="Georgia,'Times New Roman',serif" font-size="102" font-weight="500">O</text>
+  <text x="65" y="98" fill="#f8faf9" font-family="Georgia,'Times New Roman',serif" font-size="98" font-weight="500">A</text>
+  <text x="58" y="187" fill="#f8faf9" font-family="Georgia,'Times New Roman',serif" font-size="126" font-weight="500">H</text>
+  <text x="142" y="201" fill="#f8faf9" font-family="Georgia,'Times New Roman',serif" font-size="102" font-weight="500">O</text>
   <circle cx="110" cy="129" r="6" fill="#ff7f5c"/>
 </svg>
